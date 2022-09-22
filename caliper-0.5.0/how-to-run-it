@@ -1,0 +1,1 @@
+node ./packages/caliper-cli/caliper.js launch manager --caliper-workspace ../fabric/scripts/caliper-benchmarks/ --caliper-benchconfig benchmarks/samples/fabric/fabcar/config.yaml --caliper-networkconfig networks/fabric/test-network.yaml

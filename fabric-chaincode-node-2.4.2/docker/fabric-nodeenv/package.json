@@ -1,0 +1,16 @@
+{
+  "name": "fabric-nodeenv",
+  "version": "2.4.2",
+  "description": "",
+  "main": "docker.js",
+  "scripts": {
+    "build": "node docker.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "git-rev-sync": "3.0.1",
+    "toolchain": "2.4.2"
+  }
+}

@@ -1,0 +1,370 @@
+test:
+  name: Fabcar benchmark
+  description: 4 peer, 1 orderer
+  workers:
+    number: 5
+  rounds:
+    # initPKG
+    - label: initPKG (tps=100)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 100
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initPKG.js
+    - label: initPKG (tps=200)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 200
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initPKG.js
+    - label: initPKG (tps=300)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 300
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initPKG.js
+    - label: initPKG (tps=400)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 400
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initPKG.js
+    - label: initPKG (tps=500)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 500
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initPKG.js
+    - label: initPKG (tps=600)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 600
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initPKG.js
+    - label: initPKG (tps=700)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 700
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initPKG.js
+    - label: initPKG (tps=800)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 800
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initPKG.js
+    - label: initPKG (tps=900)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 900
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initPKG.js
+    - label: initPKG (tps=1000)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 1000
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initPKG.js
+    # initVID
+    - label: initVID (tps=100)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 100
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initVID.js
+    - label: initVID (tps=200)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 200
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initVID.js
+    - label: initVID (tps=300)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 300
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initVID.js
+    - label: initVID (tps=400)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 400
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initVID.js
+    - label: initVID (tps=500)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 500
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initVID.js
+    - label: initVID (tps=600)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 600
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initVID.js
+    - label: initVID (tps=700)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 700
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initVID.js
+    - label: initVID (tps=800)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 800
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initVID.js
+    - label: initVID (tps=900)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 900
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initVID.js
+    - label: initVID (tps=1000)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 1000
+      workload:
+        module: benchmarks/samples/fabric/fabcar/initVID.js
+    # queryPKG
+    - label: Query PKG (tps=200)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 200
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryPKG.js
+        arguments:
+          assets: 1000
+    - label: Query PKG (tps=400)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 400
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryPKG.js
+        arguments:
+          assets: 1000
+    - label: Query PKG (tps=600)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 600
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryPKG.js
+        arguments:
+          assets: 1000
+    - label: Query PKG (tps=800)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 800
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryPKG.js
+        arguments:
+          assets: 1000
+    - label: Query PKG (tps=1000)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 1000
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryPKG.js
+        arguments:
+          assets: 1000
+    - label: Query PKG (tps=1200)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 1200
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryPKG.js
+        arguments:
+          assets: 1000
+    - label: Query PKG (tps=1400)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 1400
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryPKG.js
+        arguments:
+          assets: 1000
+    - label: Query PKG (tps=1600)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 1600
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryPKG.js
+        arguments:
+          assets: 1000
+    - label: Query PKG (tps=1800)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 1800
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryPKG.js
+        arguments:
+          assets: 1000
+    - label: Query PKG (tps=2000)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 2000
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryPKG.js
+        arguments:
+          assets: 1000
+    # queryVID
+    - label: Query VID (tps=200)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 200
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryVID.js
+        arguments:
+          assets: 1000
+    - label: Query VID (tps=400)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 400
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryVID.js
+        arguments:
+          assets: 1000
+    - label: Query VID (tps=600)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 600
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryVID.js
+        arguments:
+          assets: 1000
+    - label: Query VID (tps=800)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 800
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryVID.js
+        arguments:
+          assets: 1000
+    - label: Query VID (tps=1000)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 1000
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryVID.js
+        arguments:
+          assets: 1000
+    - label: Query VID (tps=1200)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 1200
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryVID.js
+        arguments:
+          assets: 1000
+    - label: Query VID (tps=1400)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 1400
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryVID.js
+        arguments:
+          assets: 1000
+    - label: Query VID (tps=1600)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 1600
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryVID.js
+        arguments:
+          assets: 1000
+    - label: Query VID (tps=1800)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 1800
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryVID.js
+        arguments:
+          assets: 1000
+    - label: Query VID (tps=2000)
+      txDuration: 10
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 2000
+      workload:
+        module: benchmarks/samples/fabric/fabcar/queryVID.js
+        arguments:
+          assets: 1000

@@ -1,0 +1,143 @@
+
+# Definition of nodes
+# addr address for node
+# tls_ca_cert tls cert
+
+peer1: &peer1
+  addr: localhost:7051
+  tls_ca_cert: ./organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp/tlscacerts/tlsca.org1.example.com-cert.pem
+
+peer2: &peer2
+  addr: localhost:8051
+  tls_ca_cert: ./organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/msp/tlscacerts/tlsca.org2.example.com-cert.pem
+
+peer3: &peer3
+  addr: localhost:9051
+  tls_ca_cert: ./organizations/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/msp/tlscacerts/tlsca.org3.example.com-cert.pem
+
+peer4: &peer4
+  addr: localhost:10051
+  tls_ca_cert: ./organizations/peerOrganizations/org4.example.com/peers/peer0.org4.example.com/msp/tlscacerts/tlsca.org4.example.com-cert.pem
+
+peer5: &peer5
+  addr: localhost:11051
+  tls_ca_cert: ./organizations/peerOrganizations/org5.example.com/peers/peer0.org5.example.com/msp/tlscacerts/tlsca.org5.example.com-cert.pem
+
+peer6: &peer6
+  addr: localhost:12051
+  tls_ca_cert: ./organizations/peerOrganizations/org6.example.com/peers/peer0.org6.example.com/msp/tlscacerts/tlsca.org6.example.com-cert.pem
+
+peer7: &peer7
+  addr: localhost:13051
+  tls_ca_cert: ./organizations/peerOrganizations/org7.example.com/peers/peer0.org7.example.com/msp/tlscacerts/tlsca.org7.example.com-cert.pem
+
+peer8: &peer8
+  addr: localhost:14051
+  tls_ca_cert: ./organizations/peerOrganizations/org8.example.com/peers/peer0.org8.example.com/msp/tlscacerts/tlsca.org8.example.com-cert.pem
+
+peer9: &peer9
+  addr: localhost:15051
+  tls_ca_cert: ./organizations/peerOrganizations/org9.example.com/peers/peer0.org9.example.com/msp/tlscacerts/tlsca.org9.example.com-cert.pem
+
+peer10: &peer10
+  addr: localhost:16051
+  tls_ca_cert: ./organizations/peerOrganizations/org10.example.com/peers/peer0.org10.example.com/msp/tlscacerts/tlsca.org10.example.com-cert.pem
+
+peer11: &peer11
+  addr: localhost:17051
+  tls_ca_cert: ./organizations/peerOrganizations/org11.example.com/peers/peer0.org11.example.com/msp/tlscacerts/tlsca.org11.example.com-cert.pem
+
+peer12: &peer12
+  addr: localhost:18051
+  tls_ca_cert: ./organizations/peerOrganizations/org12.example.com/peers/peer0.org12.example.com/msp/tlscacerts/tlsca.org12.example.com-cert.pem
+
+peer13: &peer13
+  addr: localhost:19051
+  tls_ca_cert: ./organizations/peerOrganizations/org13.example.com/peers/peer0.org13.example.com/msp/tlscacerts/tlsca.org13.example.com-cert.pem
+
+peer14: &peer14
+  addr: localhost:20051
+  tls_ca_cert: ./organizations/peerOrganizations/org14.example.com/peers/peer0.org14.example.com/msp/tlscacerts/tlsca.org14.example.com-cert.pem
+
+peer15: &peer15
+  addr: localhost:21051
+  tls_ca_cert: ./organizations/peerOrganizations/org15.example.com/peers/peer0.org15.example.com/msp/tlscacerts/tlsca.org15.example.com-cert.pem
+
+peer16: &peer16
+  addr: localhost:22051
+  tls_ca_cert: ./organizations/peerOrganizations/org16.example.com/peers/peer0.org16.example.com/msp/tlscacerts/tlsca.org16.example.com-cert.pem
+
+orderer1: &orderer1
+  addr: localhost:7050
+  tls_ca_cert: ./organizations/ordererOrganizations/example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+
+# Peer Nodes to interact with as endorsement Peers
+endorsers:
+  - *peer1
+  - *peer2
+  - *peer3
+  - *peer4
+  - *peer5
+  - *peer6
+  - *peer7
+  - *peer8
+  - *peer9
+  - *peer10
+  - *peer11
+  - *peer12
+  - *peer13
+  - *peer14
+  - *peer15
+  - *peer16
+
+
+# Peer Nodes to interact with as Commit Peers as listening
+committers: 
+  - *peer1
+  - *peer2
+  - *peer3
+  - *peer4
+  - *peer5
+  - *peer6
+  - *peer7
+  - *peer8
+  - *peer9
+  - *peer10
+  - *peer11
+  - *peer12
+  - *peer13
+  - *peer14
+  - *peer15
+  - *peer16
+
+# we might support multi-committer in the future for more complex test scenario.
+# i.e. consider tx committed only if it's done on >50% of nodes. 
+# Give your commit Threshold as numbers for peers here.
+commitThreshold: 9
+
+# orderer Nodes to interact with
+orderer: *orderer1
+
+# Invocation configs
+channel: mychannel
+chaincode: basic
+# chain code args below, in a list of str
+# we provides 3 kinds of randmon
+# uuid
+# randomString$length
+# randomNumber$min_$max
+args:
+  - CreateAsset
+  - uuid
+  - randomString8
+  - randomNumber0_50
+  - randomString8
+  - randomNumber0_50
+# Tx submiter information
+mspid: Org1MSP
+private_key: ./organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore/priv_sk
+sign_cert: ./organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/signcerts/User1@org1.example.com-cert.pem
+# network traffic control
+num_of_conn: 10
+client_per_conn: 10
+

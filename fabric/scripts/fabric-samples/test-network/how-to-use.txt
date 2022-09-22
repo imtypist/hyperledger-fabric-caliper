@@ -1,0 +1,21 @@
+1. update two config file
+
+python3 generate_config.py [num_of_peer]
+
+cd configtx && python3 generate_configtx.py [num_of_peer]
+
+2. start my network
+
+./mynetwork.sh up createChannel -numofpeer [num_of_peer]
+
+./mynetwork.sh deployCC -ccn fabcar -ccp ../../caliper-benchmarks/src/fabric/samples/fabcar/node/ -ccl javascript -numofpeer [num_of_peer]
+
+3. caliper test
+
+update benchconfig: python3 generate_config.py [num_of_peer]
+
+node ./packages/caliper-cli/caliper.js launch manager --caliper-workspace ../fabric/scripts/caliper-benchmarks/ --caliper-benchconfig benchmarks/samples/fabric/fabcar/config.yaml --caliper-networkconfig networks/fabric/test-network.yaml
+
+4. close network
+
+./mynetwork.sh down -numofpeer [num_of_peer]
